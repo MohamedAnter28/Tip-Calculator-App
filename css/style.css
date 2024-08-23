@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,700;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Strong-cyan: hsl(172, 67%, 45%);
+  --Very-dark-cyan: hsl(183, 100%, 15%);
+  --Dark-grayish-cyan: hsl(186, 14%, 43%);
+  --Grayish-cyan: hsl(184, 14%, 56%);
+  --Light-grayish-cyan: hsl(185, 41%, 84%);
+  --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  font-style: italic;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  min-height: 100vh;
+  background-color: var(--Light-grayish-cyan);
+  padding: 20px;
+}
+
+
+.name{
+  letter-spacing: 2px;
+  color: var(--Grayish-cyan);
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--White);
+}
+
+.card .col-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 380px;
+}
+
+.col-1 .f-1,
+.col-1 .f-2,
+.col-1 .f-3 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--Very-light-grayish-cyan);
+  background-color: var(--Very-light-grayish-cyan);
+  border-radius: 3px;
+  padding: 0 10px;
+}
+
+.input.active {
+  border: 2px solid var(--Strong-cyan);
+}
+
+.input.error {
+  border: 2px solid rgb(255, 87, 87);
+}
+
+.f-1 input[type='number'],
+.f-3 input[type='number'] {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+  padding: 6px;
+  text-align: right;
+  caret-color: var(--Very-dark-cyan);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--Very-dark-cyan);
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 15px;
+}
+
+.options input {
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  width: 90%;
+  margin: auto;
+  padding: 12px 13px;
+  color: var(--White);
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.options input[type='button'] {
+  color: var(--Very-light-grayish-cyan);
+  background-color: var(--Very-dark-cyan);
+}
+
+.options input[type='button'].active {
+  background-color: var(--Strong-cyan);
+}
+
+.options input:hover {
+  background-color: var(--Light-grayish-cyan);
+}
+
+#customTip {
+  background: var(--Very-light-grayish-cyan);
+  color: var(--Very-dark-cyan);
+  text-align: right;
+}
+
+#customTip::placeholder {
+  color: var(--Dark-grayish-cyan);
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+label {
+  color: var(--Dark-grayish-cyan);
+  font-size: 14px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+.col-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--Very-dark-cyan);
+  width: 100%;
+  height: 305px;
+  border-radius: 5px;
+}
+
+.col-2 .f-1,
+.col-2 .f-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info p {
+  font-size: 12px;
+  color: var(--Very-light-grayish-cyan);
+}
+
+.info span {
+  color: var(--Grayish-cyan);
+  font-size: 13px;
+}
+
+.amount,
+.total {
+  color: var(--Strong-cyan);
+  font-size: 25px;
+  font-weight: 700;
+  margin-top: 29px;
+}
+
+
+.col-2 .f-2 {
+  margin-bottom: 45px;
+}
+
+
+.btn{
+  padding: 10px 30px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  background-color: var(--Strong-cyan);
+  color: var(--Very-dark-cyan);
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 0.5s ease;
+}
+
+
+.btn.disabled{
+  background-color: hsl(172deg 90.98% 25.07%); 
+  cursor: not-allowed; 
+  border: 1px solid hsl(172deg 90.98% 25.07%); 
+}
+
+
+.btn:hover{
+  background-color: var(--Light-grayish-cyan);
+}
+
+
+@media (max-width:450px){
+  .card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
